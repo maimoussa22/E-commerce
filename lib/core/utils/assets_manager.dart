@@ -11,5 +11,9 @@ class AssetsManager{
   static const String routeLogoWhite= 'assets/images/route_logo_white.png';
   static const String shoppingCartIcon= 'assets/images/shoppingCart_icon.png';
   static const String visibleIcon= 'assets/images/visibleIcon.png';
+  static const String searchIcon= 'assets/images/search_icon.png';
+  static const String announcement1= 'assets/images/announcement1.png';
+  static const String announcement2= 'assets/images/announcement2.png';
+  static const String announcement3= 'assets/images/announcement3.png';
 
 }

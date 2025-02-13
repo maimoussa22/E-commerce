@@ -11,7 +11,7 @@ class RegisterResponseEntity {
 
   String? message;
   String? statusMsg;
-  UserEntity? user;
+  RegisterUserEntity? user;
   String? token;
 
 
@@ -21,8 +21,8 @@ class RegisterResponseEntity {
 /// email : "maimoussa@gmail.com"
 /// role : "user"
 
-class UserEntity {
-  UserEntity({
+class RegisterUserEntity {
+  RegisterUserEntity({
       this.name, 
       this.email, 
       this.role,});

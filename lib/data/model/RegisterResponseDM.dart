@@ -8,11 +8,14 @@ class RegisterResponseDm extends RegisterResponseEntity{
   RegisterResponseDm({
       super.message,
       super.user,
-      super.token,});
+      super.token,
+    super.statusMsg
+  });
 
   RegisterResponseDm.fromJson(dynamic json) {
     message = json['message'];
-    user = json['user'] != null ? UserDM.fromJson(json['user']) : null;
+    statusMsg = json['statusMsg'];
+    user = json['user'] != null ? RegisterUserDM.fromJson(json['user']) : null;
     token = json['token'];
   }
 
@@ -22,13 +25,13 @@ class RegisterResponseDm extends RegisterResponseEntity{
 /// email : "maimoussa@gmail.com"
 /// role : "user"
 
-class UserDM extends UserEntity {
-  UserDM({
+class RegisterUserDM extends RegisterUserEntity {
+  RegisterUserDM({
       super.name,
       super.email,
       super.role,});
 
-  UserDM.fromJson(dynamic json) {
+  RegisterUserDM.fromJson(dynamic json) {
     name = json['name'];
     email = json['email'];
     role = json['role'];

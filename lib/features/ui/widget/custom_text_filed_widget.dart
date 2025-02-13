@@ -15,10 +15,14 @@ class TextFiledWidget extends StatelessWidget {
   int? maxLines;
   String? Function(String?)? validator;
   TextEditingController? controller;
+  double? radius;
+  Color? errorColor;
+  bool? filled;
 
   TextFiledWidget({this.borderColor,required this.hintText, this.hintStyle,
     this.maxLines,this.validator,this.controller,
-  this.labelText, this.labelStyle , this.prefixIcon,this.suffixIcon,this.obscureText =false});
+  this.labelText, this.labelStyle , this.prefixIcon,this.suffixIcon,this.obscureText =false,
+  this.errorColor , this.radius,this.filled});
 
   @override
   Widget build(BuildContext context) {
@@ -35,33 +39,33 @@ class TextFiledWidget extends StatelessWidget {
         labelStyle: labelStyle,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        filled: true,
+        filled:filled?? true,
         fillColor: AppColors.whiteColor,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(radius ?? 16),
           borderSide: BorderSide(
               color: borderColor ?? AppColors.whiteColor,
               width: 2
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(radius ?? 16),
           borderSide: BorderSide(
               color: borderColor ?? AppColors.whiteColor,
               width: 2,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(radius ?? 16),
           borderSide: BorderSide(
-              color: Colors.red,
+              color:errorColor ??  Colors.red,
               width: 2
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(radius ?? 16),
           borderSide: BorderSide(
-              color: Colors.red,
+              color: errorColor ?? Colors.red,
               width: 2
           ),
         ),

@@ -13,4 +13,12 @@ class ApiManager{
       options: Options(headers: headers,validateStatus: (status)=>true),
     );
   }
+  Future<Response>getData({required String endPoint,Object? body,
+    Map<String, dynamic>? queryParameters,}){
+    return  dio.get(ApiConstants.baseUrl+endPoint,
+      data: body,
+      queryParameters: queryParameters,
+      options: Options(validateStatus: (status)=>true)
+    );
+  }
 }
